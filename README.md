@@ -7,10 +7,8 @@
 
 ## Project Overview
 Customer churn is a major challenge in subscription-based businesses like telecom.  
-This project builds an **end-to-end data science + machine learning +data analysis** to:
-
-- Clean and transform customer data
-- Create a SQL database from clean data using SQLAlchemy
+- Clean and transform customer churn data
+- Create a SQL database from clean data  using SQLAlchemy
 - Analyze churn behavior with SQL queries + Python EDA
 - Train ML models to predict churn
 - Derive business insights & estimate ROI
