@@ -1,6 +1,6 @@
-# 📊 Telecom Customer Churn Prediction — End-to-End ML Project (2025)
+# Telecom Customer Churn Prediction — End-to-End Project (2025)
 
-> A complete end-to-end data science project to predict telecom customer churn using  
+> A complete end-to-end data science analysis project to predict telecom customer churn using  
 > Python, SQL (MySQL), Machine Learning and an interactive Streamlit app.
 
 ---
