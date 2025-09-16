@@ -49,6 +49,3 @@ This project builds an **end-to-end data science + machine learning +data analys
 - Loaded the cleaned data as a table using `pandas.to_sql()`
 - Executed SQL queries to analyze churn
 
-
-engine = create_engine("mysql+pymysql://user:password@localhost:3306/churn_db")
-df.to_sql("customers", con=engine, if_exists="replace", index=False)
