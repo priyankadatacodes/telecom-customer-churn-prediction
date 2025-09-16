@@ -1,2 +1,54 @@
-# telecom-customer-churn-prediction
-End-to-End data analysis project to predict customer churn for a telecom company. Includes data cleaning, EDA, feature engineering, model building, business insights, SQL analysis, and an interactive Streamlit web app.
+# 📊 Telecom Customer Churn Prediction — End-to-End ML Project (2025)
+
+> A complete end-to-end data science project to predict telecom customer churn using  
+> Python, SQL (MySQL), Machine Learning and an interactive Streamlit app.
+
+---
+
+## Project Overview
+Customer churn is a major challenge in subscription-based businesses like telecom.  
+This project builds an **end-to-end data science + machine learning +data analysis** to:
+
+- Clean and transform customer data
+- Create a SQL database from clean data using SQLAlchemy
+- Analyze churn behavior with SQL queries + Python EDA
+- Train ML models to predict churn
+- Derive business insights & estimate ROI
+- Deploy an interactive Streamlit app
+
+---
+
+## Tech Stack
+- **Languages:** Python, SQL  
+- **Libraries:** pandas, numpy, matplotlib, seaborn, scikit-learn, SQLAlchemy  
+- **Database:** MySQL  
+- **Frameworks:** Jupyter Notebook, Streamlit  
+- **Tools:** Git, GitHub
+
+---
+
+## Project Workflow
+
+### 1. Data Collection
+- Dataset: [Telco Customer Churn](https://www.kaggle.com/blastchar/telco-customer-churn)
+- 7043 customers, 21 features  
+- Loaded with pandas for preprocessing
+
+---
+
+### 2. Data Cleaning (Python)
+- Converted `TotalCharges` to numeric and handled missing values
+- Created binary target column `Churn_flag`
+- Removed duplicate records
+- Saved clean version as `clean_churn.csv`
+
+---
+
+### 3. SQL Database Creation (MySQL + SQLAlchemy)
+- Used **SQLAlchemy** to create a **MySQL** database `churn_db`
+- Loaded the cleaned data as a table using `pandas.to_sql()`
+- Executed SQL queries to analyze churn
+
+
+engine = create_engine("mysql+pymysql://user:password@localhost:3306/churn_db")
+df.to_sql("customers", con=engine, if_exists="replace", index=False)
