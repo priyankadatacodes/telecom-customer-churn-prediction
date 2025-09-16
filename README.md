@@ -45,5 +45,8 @@ Customer churn is a major challenge in subscription-based businesses like teleco
 ### 3. SQL Database Creation (MySQL + SQLAlchemy)
 - Used **SQLAlchemy** to create a **MySQL** database `churn_db`
 - Loaded the cleaned data as a table using `pandas.to_sql()`
+
+
+
 - Executed SQL queries to analyze churn
 
