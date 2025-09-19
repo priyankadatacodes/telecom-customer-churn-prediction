@@ -13,7 +13,7 @@ Customer churn is a major challenge in subscription-based businesses like teleco
 - Train ML models to predict churn
 - Derive business insights & estimate ROI
 - Deploy an interactive Streamlit app
-
+-Result link-https://telecom-customer-churn-prediction-mg5horualijpmmu7zgngsg.streamlit.app/
 ---
 
 ## Tech Stack
