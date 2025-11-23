@@ -102,6 +102,6 @@ This portfolio project presents a robust pipeline for churn prediction: from raw
 ## **Conclusion**
 
 This portfolio project exemplifies a complete, production-ready machine learning framework for customer churn in telecom.  
-The pipeline transforms raw data into actionable intelligence and business value—ready for MNC adoption and real-world impact.
+The pipeline transforms raw data into actionable intelligence and business value—ready for adoption and real-world impact.
 
 ---
