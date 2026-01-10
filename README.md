@@ -1,107 +1,200 @@
 # **Customer Churn Prediction for Telecom**
-*End-to-End Machine Learning Project*
+**End-to-End Machine Learning & Analytics Project (Python → SQL)**
 
 ---
 
-## **Overview**
+## **Executive Summary**
 
-Customer churn threatens growth in telecom and other subscription-driven industries. Early identification of customers likely to leave is crucial to retaining revenue and market share.  
-This portfolio project presents a robust pipeline for churn prediction: from raw data to actionable business solutions.
+Customer churn is one of the biggest threats to growth in **telecom and subscription-based businesses**.  
+This project builds an **end-to-end churn prediction pipeline** that identifies customers likely to leave, explains **why they churn**, and estimates the **financial impact of retention strategies**.
 
----
-
-## **Business Objective**
-
-- Predict which customers are likely to churn, and when.
-- Uncover key factors influencing customer attrition.
-- Deliver actionable retention strategies for decision-makers.
-- Quantify the revenue impact of improved retention.
+The project combines **Python for analysis and modeling**, **SQL for structured analysis**, and **business-driven insights** to move from raw data to **actionable retention decisions**.
 
 ---
 
-## **Project Workflow**
+## **Why I Built This Project**
+
+Retaining existing customers is far more cost-effective than acquiring new ones.  
+However, many businesses struggle to:
+- Identify customers who are about to churn  
+- Understand what drives churn  
+- Quantify the ROI of retention actions  
+
+I built this project to demonstrate how **data analytics and machine learning** can support **proactive customer retention**, not just reporting churn rates.
+
+This mirrors a real-world analyst role supporting **growth, marketing, and customer success teams**.
+
+---
+
+## **Business Context**
+
+Telecom companies operate on:
+- Recurring subscription revenue  
+- Long-term customer relationships  
+- High competition and low switching costs  
+
+A churn rate of ~**26%** indicates:
+- Revenue leakage  
+- High replacement cost  
+- Reduced customer lifetime value (CLV)  
+
+The business needs to **predict churn early** and focus retention efforts where they matter most.
+
+---
+
+## **Problem Statement**
+
+Analyze telecom customer data to:
+- Predict which customers are likely to churn  
+- Identify key churn drivers  
+- Segment customers by churn risk  
+- Quantify the revenue impact of retention strategies  
+
+---
+
+## **Business Objectives**
+
+- Predict customer churn accurately  
+- Understand behavioral and contract-related churn drivers  
+- Enable targeted retention actions  
+- Estimate ROI from improved retention  
+- Support decision-making with data-backed insights  
+
+---
+
+## **Dataset Overview**
+
+- **Source:** Telco Customer Churn Dataset (Kaggle)  
+- **Link:** https://www.kaggle.com/blastchar/telco-customer-churn  
+- **Total Records:** **7,043 customers**  
+- **Features:** **21**  
+- **Target Variable:** Churn (Yes / No)  
+- **Churn Rate:** ~**26%**
+
+---
+
+## **End-to-End Project Workflow**
+
+---
 
 ### **1. Data Collection**
-- Source: [Telco Customer Churn dataset](https://www.kaggle.com/blastchar/telco-customer-churn)
-- Size: 7,043 customers, 21 features
-- Loaded using pandas
+- Loaded raw churn dataset using **pandas**
+- Verified schema and data consistency
 
 ---
 
 ### **2. Data Cleaning (Python)**
-- Handled missing values, converted `TotalCharges` to numeric
-- Created target feature: `Churn_flag` (1=Yes, 0=No)
-- Removed duplicates
-- Exported cleaned data as `clean_churn.csv`
+- Handled missing values  
+- Converted `TotalCharges` to numeric  
+- Created binary target variable:
+  - **Churn_flag = 1 (Yes), 0 (No)**
+- Removed duplicate records  
+- Exported clean dataset as `clean_churn.csv`
 
 ---
 
 ### **3. SQL Database Creation**
-- MySQL database (`churn_db`) created via SQLAlchemy
-- Imported cleaned churn data (`pandas.to_sql`)
-- SQL queries for churn pattern analysis
+- Created **MySQL database (`churn_db`)**
+- Imported cleaned data using **SQLAlchemy**
+- Used SQL queries for churn pattern analysis
 
 ---
 
-### **4. Exploratory Data Analysis**
-- Visualized churn distribution, feature relationships, and outliers
-- Insights extracted:
-  - Month-to-month contracts & electronic check users have highest churn
-  - Fiber optic internet linked to elevated churn
-  - <12-month tenure and senior citizens more likely to churn
+### **4. Exploratory Data Analysis (EDA)**
+
+Key findings:
+- **Month-to-month contracts** show the highest churn  
+- **Electronic check** payment users churn more  
+- **Fiber optic** internet customers have elevated churn  
+- Customers with **<12 months tenure** are more likely to churn  
+- **Senior citizens** show higher churn risk  
 
 ---
 
 ### **5. Feature Engineering**
-- Categorical and numerical feature separation
-- Input matrix `X` and target vector `y` design
-- Prepared columns for encoding/scaling
+- Separated categorical and numerical features  
+- Designed input matrix **X** and target vector **y**  
+- Prepared features for encoding and scaling  
 
 ---
 
 ### **6. Preprocessing & Model Training**
-- OneHotEncoded categorical features, StandardScaled numerical features
-- 70/30 stratified train-test split
-- ML models trained and benchmarked:
-  - Logistic Regression (ROC-AUC ≈ 0.84)
-  - Random Forest
+- One-Hot Encoding for categorical variables  
+- Standard Scaling for numerical features  
+- **70/30 stratified train-test split**
+
+**Models Trained:**
+- **Logistic Regression** (Best Model)  
+- Random Forest  
+
+**Best Performance:**
+- **Logistic Regression ROC-AUC ≈ 0.84**
 
 ---
 
-### **7. Business Insights & Retention Strategy**
-- Top churn drivers: contract type, payment method, internet service, tenure, charges
-- Actionable churn probabilities:
-  - ≥0.70: Retention Call
-  - 0.40–0.70: Email Coupon
-  - <0.40: Monitor Only
+## **Churn Risk Segmentation & Business Strategy**
+
+Using churn probabilities, customers were segmented into action buckets:
+
+- **Churn Probability ≥ 0.70** → Immediate retention call  
+- **0.40 – 0.70** → Email coupon / targeted offer  
+- **< 0.40** → Monitor only  
+
+This converts model output into **clear business actions**.
 
 ---
 
-### **8. ROI Estimation**
-- Calculated uplift for retaining high-risk customers (≥0.7 churn probability)
-- Retention scenarios (1%–10%) modeled
-- Estimated annual savings at 5% uplift: **~₹5,441**
+## **ROI Estimation**
 
----
+To quantify business value:
+- Modeled retention uplift scenarios (**1%–10%**)  
+- Focused on high-risk customers (≥ 0.70 churn probability)
 
-## **Technologies Used**
-- Python: Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn
-- SQL: MySQL, SQLAlchemy
-- Jupyter Notebook
+**Estimated Impact:**
+- Retaining just **5% of high-risk customers**  
+- Annual savings ≈ **₹5,441**
+
+This shows how even small retention improvements can deliver measurable ROI.
 
 ---
 
 ## **Key Results**
-- Dataset: 7,043 records, churn rate ≈ 26%
-- Best model: Logistic Regression (ROC-AUC ≈ 0.84)
-- High-risk segment: ~25% of customers
-- Business impact: Retaining top 5% at-risk yields annual savings of ~₹5,441
+
+- **Dataset Size:** 7,043 customers  
+- **Churn Rate:** ~**26%**  
+- **Best Model:** Logistic Regression  
+- **ROC-AUC:** **~0.84**  
+- **High-Risk Segment:** ~**25%** of customers  
+- **Annual Savings (5% uplift):** **~₹5,441**
 
 ---
 
-## **Conclusion**
+## **Business Impact**
 
-This portfolio project exemplifies a complete, production-ready machine learning framework for customer churn in telecom.  
-The pipeline transforms raw data into actionable intelligence and business value—ready for adoption and real-world impact.
+- Enables early identification of churn risk  
+- Supports targeted retention instead of mass campaigns  
+- Reduces revenue leakage  
+- Improves customer lifetime value  
+- Aligns analytics with business outcomes  
 
 ---
+
+## **Final Takeaway**
+
+Customer churn can be reduced significantly when **prediction, explanation, and business action** work together.  
+This project demonstrates how a **data analyst / ML pipeline** can transform raw telecom data into **actionable retention strategies with measurable financial impact**.
+
+---
+
+## **Technologies Used**
+
+- **Python:** Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn  
+- **SQL:** MySQL, SQLAlchemy  
+- **Environment:** Jupyter Notebook  
+
+---
+
+## **Author**
+
+**Priyanka Lakra**  
+**Aspiring Data Analyst | Python | SQL | Churn Analytics | Machine Learning**
