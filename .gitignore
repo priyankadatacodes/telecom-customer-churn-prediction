@@ -1,40 +1,15 @@
-# OS / Editor files
-.DS_Store
-Thumbs.db
-.vscode/
-.idea/
-*.swp
-
-# Python cache
-__pycache__/
-*.py[cod]
-*.pyo
-*.pyd
-*.egg-info/
-.eggs/
-
-# Virtual environments
+# Environment variables / secrets — never commit these
 .env
-.venv
-env/
-venv/
-ENV/
 
-# Jupyter notebook checkpoints
+# Python
+__pycache__/
+*.pyc
 .ipynb_checkpoints/
 
-# Streamlit cache
-.streamlit/
+# OS junk
+.DS_Store
+Thumbs.db
 
-# Logs and temp files
-*.log
-*.tmp
-
-# Large data files
-*.zip
-*.tar.gz
-*.rar
-
-# Personal config
-*.env
-
+# Editor
+.vscode/
+.idea/
