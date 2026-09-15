@@ -1,4 +1,4 @@
-```python
+
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -154,4 +154,3 @@ plt.show()
 
 # Print the top 10 features
 print(top_features)
-```
